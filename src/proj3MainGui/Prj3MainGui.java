@@ -330,9 +330,9 @@ public class Prj3MainGui extends javax.swing.JFrame
 	{
 	public void actionPerformed(ActionEvent e)
 		{
-		    System.exit(0);
+		    System.exit (0);
 		}
-	});
+        });
     }//GEN-LAST:event_jbExitActionPerformed
 
     /**
