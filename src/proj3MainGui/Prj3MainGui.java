@@ -52,6 +52,7 @@ public class Prj3MainGui extends javax.swing.JFrame
         rbmaintDelete = new javax.swing.JRadioButton();
         cmbmaintFileList = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         buttonPnl = new javax.swing.JPanel();
         jbSearch = new javax.swing.JButton();
         jbClear = new javax.swing.JButton();
@@ -59,13 +60,14 @@ public class Prj3MainGui extends javax.swing.JFrame
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("COP2805 Project 3");
-        setPreferredSize(new java.awt.Dimension(435, 475));
+        setPreferredSize(new java.awt.Dimension(635, 525));
         setResizable(false);
 
         headerPnl.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         headerPnl.setPreferredSize(new java.awt.Dimension(400, 50));
 
-        headerLbl.setFont(new java.awt.Font("Tahoma", 2, 20)); // NOI18N
+        headerLbl.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        headerLbl.setForeground(new java.awt.Color(0, 102, 153));
         headerLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         headerLbl.setText("COP2805 Project 3 GUI Template");
         headerLbl.setMaximumSize(new java.awt.Dimension(300, 25));
@@ -75,19 +77,19 @@ public class Prj3MainGui extends javax.swing.JFrame
         headerPnlLayout.setHorizontalGroup(
             headerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerPnlLayout.createSequentialGroup()
-                .addGap(63, 63, 63)
+                .addGap(111, 111, 111)
                 .addComponent(headerLbl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         headerPnlLayout.setVerticalGroup(
             headerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPnlLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(headerPnlLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(headerLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        searchPnl.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial Rounded MT Bold", 0, 12), java.awt.SystemColor.inactiveCaption), "Search", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), java.awt.SystemColor.activeCaption)); // NOI18N
+        searchPnl.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial Rounded MT Bold", 0, 12), java.awt.SystemColor.inactiveCaption), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), java.awt.SystemColor.activeCaption)); // NOI18N
         searchPnl.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         searchPnl.setPreferredSize(new java.awt.Dimension(225, 250));
 
@@ -114,14 +116,18 @@ public class Prj3MainGui extends javax.swing.JFrame
         rbsearchOR.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         rbsearchOR.setText("OR");
 
-        jLabel1.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 153));
         jLabel1.setText("Search Type");
 
         jSeparator1.setMinimumSize(new java.awt.Dimension(200, 10));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 102, 153));
         jLabel2.setText("Search Results");
 
+        jList1.setBackground(new java.awt.Color(204, 204, 255));
+        jList1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jList1.setModel(new javax.swing.AbstractListModel()
         {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -130,10 +136,13 @@ public class Prj3MainGui extends javax.swing.JFrame
         });
         searchList.setViewportView(jList1);
 
+        txtsearchText.setBackground(new java.awt.Color(204, 204, 255));
         txtsearchText.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtsearchText.setToolTipText("Enter the Search Item or Phrase");
+        txtsearchText.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 102, 153));
         jLabel3.setText("Search Criteria");
         jLabel3.setToolTipText("");
 
@@ -147,10 +156,12 @@ public class Prj3MainGui extends javax.swing.JFrame
                     .addComponent(rbsearchAND)
                     .addComponent(rbsearchOR)
                     .addComponent(rbsearchPHRASE))
+                .addGap(69, 69, 69)
+                .addGroup(searchPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel1))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(searchPnlLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(searchList))
             .addGroup(searchPnlLayout.createSequentialGroup()
                 .addGroup(searchPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(searchPnlLayout.createSequentialGroup()
@@ -158,40 +169,39 @@ public class Prj3MainGui extends javax.swing.JFrame
                         .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(searchPnlLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(txtsearchText)))
+                        .addComponent(txtsearchText))
+                    .addGroup(searchPnlLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(searchList)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchPnlLayout.createSequentialGroup()
-                .addGap(0, 74, Short.MAX_VALUE)
-                .addGroup(searchPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
-                .addGap(75, 75, 75))
         );
         searchPnlLayout.setVerticalGroup(
             searchPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchPnlLayout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rbsearchAND)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rbsearchOR)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rbsearchPHRASE)
-                .addGap(9, 9, 9)
-                .addComponent(jLabel3)
+                .addGroup(searchPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(searchPnlLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(rbsearchAND)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rbsearchOR)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rbsearchPHRASE))
+                    .addGroup(searchPnlLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(86, 86, 86)
+                        .addComponent(jLabel3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtsearchText, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(30, 30, 30)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(searchList, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(searchList, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        maintPnl.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "File Maint", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), java.awt.SystemColor.activeCaption)); // NOI18N
+        maintPnl.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), java.awt.SystemColor.activeCaption)); // NOI18N
         maintPnl.setPreferredSize(new java.awt.Dimension(200, 250));
 
         rbADD.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -202,35 +212,45 @@ public class Prj3MainGui extends javax.swing.JFrame
 
         cmbmaintFileList.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cmbmaintFileList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbmaintFileList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jButton1.setText("Update");
+
+        jLabel4.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 102, 153));
+        jLabel4.setText("File Maintenance");
 
         javax.swing.GroupLayout maintPnlLayout = new javax.swing.GroupLayout(maintPnl);
         maintPnl.setLayout(maintPnlLayout);
         maintPnlLayout.setHorizontalGroup(
             maintPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(cmbmaintFileList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(maintPnlLayout.createSequentialGroup()
                 .addGroup(maintPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(maintPnlLayout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(jButton1))
                     .addComponent(rbmaintDelete)
-                    .addComponent(rbADD))
-                .addContainerGap(50, Short.MAX_VALUE))
-            .addComponent(cmbmaintFileList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rbADD)
+                    .addGroup(maintPnlLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(jButton1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, maintPnlLayout.createSequentialGroup()
+                .addGap(0, 40, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(26, 26, 26))
         );
         maintPnlLayout.setVerticalGroup(
             maintPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(maintPnlLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addComponent(jLabel4)
+                .addGap(4, 4, 4)
                 .addComponent(rbADD)
                 .addGap(18, 18, 18)
                 .addComponent(rbmaintDelete)
                 .addGap(39, 39, 39)
                 .addComponent(cmbmaintFileList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         buttonPnl.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -286,11 +306,11 @@ public class Prj3MainGui extends javax.swing.JFrame
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(searchPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(searchPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(maintPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(buttonPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
-            .addComponent(headerPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
+            .addComponent(buttonPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
+            .addComponent(headerPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,9 +318,9 @@ public class Prj3MainGui extends javax.swing.JFrame
                 .addComponent(headerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(searchPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
-                    .addComponent(maintPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                    .addComponent(searchPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
+                    .addComponent(maintPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buttonPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -389,6 +409,7 @@ public class Prj3MainGui extends javax.swing.JFrame
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JList jList1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton jbClear;
