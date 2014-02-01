@@ -34,26 +34,26 @@ public class Prj3MainGui extends javax.swing.JFrame
     private void initComponents()
     {
 
-        headerPnl = new javax.swing.JPanel();
+        pnlHeader = new javax.swing.JPanel();
         headerLbl = new javax.swing.JLabel();
-        searchPnl = new javax.swing.JPanel();
+        pnlSearch = new javax.swing.JPanel();
         rbsearchAND = new javax.swing.JRadioButton();
         rbsearchPHRASE = new javax.swing.JRadioButton();
         rbsearchOR = new javax.swing.JRadioButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblType = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel2 = new javax.swing.JLabel();
-        searchList = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        lblResults = new javax.swing.JLabel();
+        scrpnlResultList = new javax.swing.JScrollPane();
+        lstResults = new javax.swing.JList();
         txtsearchText = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        maintPnl = new javax.swing.JPanel();
-        rbADD = new javax.swing.JRadioButton();
-        rbmaintDelete = new javax.swing.JRadioButton();
+        lblCriteria = new javax.swing.JLabel();
+        pnlFileMaint = new javax.swing.JPanel();
+        rbFileADD = new javax.swing.JRadioButton();
+        rbFileDelete = new javax.swing.JRadioButton();
         cmbmaintFileList = new javax.swing.JComboBox();
-        jButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        buttonPnl = new javax.swing.JPanel();
+        jbUdate = new javax.swing.JButton();
+        lblFileMaint = new javax.swing.JLabel();
+        pnlButton = new javax.swing.JPanel();
         jbSearch = new javax.swing.JButton();
         jbClear = new javax.swing.JButton();
         jbExit = new javax.swing.JButton();
@@ -63,8 +63,8 @@ public class Prj3MainGui extends javax.swing.JFrame
         setPreferredSize(new java.awt.Dimension(635, 525));
         setResizable(false);
 
-        headerPnl.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        headerPnl.setPreferredSize(new java.awt.Dimension(400, 50));
+        pnlHeader.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        pnlHeader.setPreferredSize(new java.awt.Dimension(400, 50));
 
         headerLbl.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         headerLbl.setForeground(new java.awt.Color(0, 102, 153));
@@ -72,26 +72,26 @@ public class Prj3MainGui extends javax.swing.JFrame
         headerLbl.setText("COP2805 Project 3 GUI Template");
         headerLbl.setMaximumSize(new java.awt.Dimension(300, 25));
 
-        javax.swing.GroupLayout headerPnlLayout = new javax.swing.GroupLayout(headerPnl);
-        headerPnl.setLayout(headerPnlLayout);
-        headerPnlLayout.setHorizontalGroup(
-            headerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerPnlLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnlHeaderLayout = new javax.swing.GroupLayout(pnlHeader);
+        pnlHeader.setLayout(pnlHeaderLayout);
+        pnlHeaderLayout.setHorizontalGroup(
+            pnlHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlHeaderLayout.createSequentialGroup()
                 .addGap(111, 111, 111)
                 .addComponent(headerLbl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(69, Short.MAX_VALUE))
         );
-        headerPnlLayout.setVerticalGroup(
-            headerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(headerPnlLayout.createSequentialGroup()
+        pnlHeaderLayout.setVerticalGroup(
+            pnlHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlHeaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(headerLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        searchPnl.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial Rounded MT Bold", 0, 12), java.awt.SystemColor.inactiveCaption), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), java.awt.SystemColor.activeCaption)); // NOI18N
-        searchPnl.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        searchPnl.setPreferredSize(new java.awt.Dimension(225, 250));
+        pnlSearch.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial Rounded MT Bold", 0, 12), java.awt.SystemColor.inactiveCaption), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), java.awt.SystemColor.activeCaption)); // NOI18N
+        pnlSearch.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        pnlSearch.setPreferredSize(new java.awt.Dimension(225, 250));
 
         rbsearchAND.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         rbsearchAND.setText("AND");
@@ -116,145 +116,145 @@ public class Prj3MainGui extends javax.swing.JFrame
         rbsearchOR.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         rbsearchOR.setText("OR");
 
-        jLabel1.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 153));
-        jLabel1.setText("Search Type");
+        lblType.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        lblType.setForeground(new java.awt.Color(0, 102, 153));
+        lblType.setText("Search Type");
 
         jSeparator1.setMinimumSize(new java.awt.Dimension(200, 10));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 102, 153));
-        jLabel2.setText("Search Results");
+        lblResults.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        lblResults.setForeground(new java.awt.Color(0, 102, 153));
+        lblResults.setText("Search Results");
 
-        jList1.setBackground(new java.awt.Color(204, 204, 255));
-        jList1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        jList1.setModel(new javax.swing.AbstractListModel()
+        lstResults.setBackground(new java.awt.Color(204, 204, 255));
+        lstResults.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        lstResults.setModel(new javax.swing.AbstractListModel()
         {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        searchList.setViewportView(jList1);
+        scrpnlResultList.setViewportView(lstResults);
 
         txtsearchText.setBackground(new java.awt.Color(204, 204, 255));
         txtsearchText.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtsearchText.setToolTipText("Enter the Search Item or Phrase");
         txtsearchText.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 102, 153));
-        jLabel3.setText("Search Criteria");
-        jLabel3.setToolTipText("");
+        lblCriteria.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        lblCriteria.setForeground(new java.awt.Color(0, 102, 153));
+        lblCriteria.setText("Search Criteria");
+        lblCriteria.setToolTipText("");
 
-        javax.swing.GroupLayout searchPnlLayout = new javax.swing.GroupLayout(searchPnl);
-        searchPnl.setLayout(searchPnlLayout);
-        searchPnlLayout.setHorizontalGroup(
-            searchPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(searchPnlLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnlSearchLayout = new javax.swing.GroupLayout(pnlSearch);
+        pnlSearch.setLayout(pnlSearchLayout);
+        pnlSearchLayout.setHorizontalGroup(
+            pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSearchLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addGroup(searchPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(rbsearchAND)
                     .addComponent(rbsearchOR)
                     .addComponent(rbsearchPHRASE))
                 .addGap(69, 69, 69)
-                .addGroup(searchPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1))
+                .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lblResults)
+                    .addComponent(lblCriteria)
+                    .addComponent(lblType))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(searchPnlLayout.createSequentialGroup()
-                .addGroup(searchPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(searchPnlLayout.createSequentialGroup()
+            .addGroup(pnlSearchLayout.createSequentialGroup()
+                .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlSearchLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(searchPnlLayout.createSequentialGroup()
+                    .addGroup(pnlSearchLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(txtsearchText))
-                    .addGroup(searchPnlLayout.createSequentialGroup()
+                    .addGroup(pnlSearchLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(searchList)))
+                        .addComponent(scrpnlResultList)))
                 .addContainerGap())
         );
-        searchPnlLayout.setVerticalGroup(
-            searchPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(searchPnlLayout.createSequentialGroup()
-                .addGroup(searchPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(searchPnlLayout.createSequentialGroup()
+        pnlSearchLayout.setVerticalGroup(
+            pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSearchLayout.createSequentialGroup()
+                .addGroup(pnlSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlSearchLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addComponent(rbsearchAND)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(rbsearchOR)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(rbsearchPHRASE))
-                    .addGroup(searchPnlLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                    .addGroup(pnlSearchLayout.createSequentialGroup()
+                        .addComponent(lblType)
                         .addGap(86, 86, 86)
-                        .addComponent(jLabel3)))
+                        .addComponent(lblCriteria)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtsearchText, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(lblResults)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(searchList, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                .addComponent(scrpnlResultList, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        maintPnl.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), java.awt.SystemColor.activeCaption)); // NOI18N
-        maintPnl.setPreferredSize(new java.awt.Dimension(200, 250));
+        pnlFileMaint.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 14), java.awt.SystemColor.activeCaption)); // NOI18N
+        pnlFileMaint.setPreferredSize(new java.awt.Dimension(200, 250));
 
-        rbADD.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        rbADD.setText("ADD");
+        rbFileADD.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        rbFileADD.setText("ADD");
 
-        rbmaintDelete.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        rbmaintDelete.setText("DELETE");
+        rbFileDelete.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        rbFileDelete.setText("DELETE");
 
         cmbmaintFileList.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cmbmaintFileList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbmaintFileList.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        jButton1.setText("Update");
+        jbUdate.setText("Update");
 
-        jLabel4.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 102, 153));
-        jLabel4.setText("File Maintenance");
+        lblFileMaint.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        lblFileMaint.setForeground(new java.awt.Color(0, 102, 153));
+        lblFileMaint.setText("File Maintenance");
 
-        javax.swing.GroupLayout maintPnlLayout = new javax.swing.GroupLayout(maintPnl);
-        maintPnl.setLayout(maintPnlLayout);
-        maintPnlLayout.setHorizontalGroup(
-            maintPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnlFileMaintLayout = new javax.swing.GroupLayout(pnlFileMaint);
+        pnlFileMaint.setLayout(pnlFileMaintLayout);
+        pnlFileMaintLayout.setHorizontalGroup(
+            pnlFileMaintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(cmbmaintFileList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(maintPnlLayout.createSequentialGroup()
-                .addGroup(maintPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rbmaintDelete)
-                    .addComponent(rbADD)
-                    .addGroup(maintPnlLayout.createSequentialGroup()
+            .addGroup(pnlFileMaintLayout.createSequentialGroup()
+                .addGroup(pnlFileMaintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rbFileDelete)
+                    .addComponent(rbFileADD)
+                    .addGroup(pnlFileMaintLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
-                        .addComponent(jButton1)))
+                        .addComponent(jbUdate)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, maintPnlLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFileMaintLayout.createSequentialGroup()
                 .addGap(0, 40, Short.MAX_VALUE)
-                .addComponent(jLabel4)
+                .addComponent(lblFileMaint)
                 .addGap(26, 26, 26))
         );
-        maintPnlLayout.setVerticalGroup(
-            maintPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(maintPnlLayout.createSequentialGroup()
-                .addComponent(jLabel4)
+        pnlFileMaintLayout.setVerticalGroup(
+            pnlFileMaintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlFileMaintLayout.createSequentialGroup()
+                .addComponent(lblFileMaint)
                 .addGap(4, 4, 4)
-                .addComponent(rbADD)
+                .addComponent(rbFileADD)
                 .addGap(18, 18, 18)
-                .addComponent(rbmaintDelete)
+                .addComponent(rbFileDelete)
                 .addGap(39, 39, 39)
                 .addComponent(cmbmaintFileList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(jbUdate)
                 .addContainerGap())
         );
 
-        buttonPnl.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        buttonPnl.setPreferredSize(new java.awt.Dimension(277, 45));
+        pnlButton.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        pnlButton.setPreferredSize(new java.awt.Dimension(277, 45));
 
         jbSearch.setText("Search");
         jbSearch.setToolTipText("Click to excute the search\n");
@@ -278,11 +278,11 @@ public class Prj3MainGui extends javax.swing.JFrame
             }
         });
 
-        javax.swing.GroupLayout buttonPnlLayout = new javax.swing.GroupLayout(buttonPnl);
-        buttonPnl.setLayout(buttonPnlLayout);
-        buttonPnlLayout.setHorizontalGroup(
-            buttonPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buttonPnlLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnlButtonLayout = new javax.swing.GroupLayout(pnlButton);
+        pnlButton.setLayout(pnlButtonLayout);
+        pnlButtonLayout.setHorizontalGroup(
+            pnlButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlButtonLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jbSearch)
                 .addGap(41, 41, 41)
@@ -291,10 +291,10 @@ public class Prj3MainGui extends javax.swing.JFrame
                 .addComponent(jbExit)
                 .addGap(24, 24, 24))
         );
-        buttonPnlLayout.setVerticalGroup(
-            buttonPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buttonPnlLayout.createSequentialGroup()
-                .addGroup(buttonPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        pnlButtonLayout.setVerticalGroup(
+            pnlButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlButtonLayout.createSequentialGroup()
+                .addGroup(pnlButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbSearch)
                     .addComponent(jbClear)
                     .addComponent(jbExit))
@@ -306,22 +306,22 @@ public class Prj3MainGui extends javax.swing.JFrame
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(searchPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+                .addComponent(pnlSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(maintPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(buttonPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
-            .addComponent(headerPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
+                .addComponent(pnlFileMaint, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(pnlButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
+            .addComponent(pnlHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(headerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(searchPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
-                    .addComponent(maintPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE))
+                    .addComponent(pnlSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
+                    .addComponent(pnlFileMaint, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(buttonPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -401,28 +401,28 @@ public class Prj3MainGui extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel buttonPnl;
     private javax.swing.JComboBox cmbmaintFileList;
     private javax.swing.JLabel headerLbl;
-    private javax.swing.JPanel headerPnl;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JList jList1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton jbClear;
     private javax.swing.JButton jbExit;
     private javax.swing.JButton jbSearch;
-    private javax.swing.JPanel maintPnl;
-    private javax.swing.JRadioButton rbADD;
-    private javax.swing.JRadioButton rbmaintDelete;
+    private javax.swing.JButton jbUdate;
+    private javax.swing.JLabel lblCriteria;
+    private javax.swing.JLabel lblFileMaint;
+    private javax.swing.JLabel lblResults;
+    private javax.swing.JLabel lblType;
+    private javax.swing.JList lstResults;
+    private javax.swing.JPanel pnlButton;
+    private javax.swing.JPanel pnlFileMaint;
+    private javax.swing.JPanel pnlHeader;
+    private javax.swing.JPanel pnlSearch;
+    private javax.swing.JRadioButton rbFileADD;
+    private javax.swing.JRadioButton rbFileDelete;
     private javax.swing.JRadioButton rbsearchAND;
     private javax.swing.JRadioButton rbsearchOR;
     private javax.swing.JRadioButton rbsearchPHRASE;
-    private javax.swing.JScrollPane searchList;
-    private javax.swing.JPanel searchPnl;
+    private javax.swing.JScrollPane scrpnlResultList;
     private javax.swing.JTextField txtsearchText;
     // End of variables declaration//GEN-END:variables
 }
