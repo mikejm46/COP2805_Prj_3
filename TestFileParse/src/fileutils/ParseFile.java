@@ -26,8 +26,7 @@ public class ParseFile
 	{
 		//get a list of files
 		fNames = retrieveFileList();
-		
-		
+
 		
 		//get the file contents
 		try
@@ -67,11 +66,11 @@ public class ParseFile
 		} 
 		catch (FileNotFoundException e)
 		{
-			JOptionPane.showMessageDialog(null, "No File Found @ C:\\Temp1", "Index Map File Error", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(null, "No File Found - C:\\IndexTemp", "Index Map File Error", JOptionPane.WARNING_MESSAGE);
 		}
 		catch (IOException e)
 		{
-			JOptionPane.showMessageDialog(null, "File I/O @ C:\\Temp1", "Index Map File Error", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(null, "File I/O Error - C:\\IndexTemp", "Index Map File Error", JOptionPane.WARNING_MESSAGE);
 		}
 
 	} 
@@ -85,7 +84,7 @@ public class ParseFile
  */
 	public static ArrayList<ArrayList> readFile() throws IOException , NullPointerException
 	{
-		//some temperary storage
+		//some temporary storage
 		String fileName;
 		String inString;
 		int fileCount = 0;
@@ -188,7 +187,7 @@ public class ParseFile
 		} 
 		catch (FileNotFoundException e)
 		{
-			JOptionPane.showMessageDialog(null, "No File Found @ C:\\Temp1", "Index Map File Error", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(null, "No File Found - C:\\IndexTemp", "Index Map File Error", JOptionPane.WARNING_MESSAGE);
 		}
 		
 		//get rid of duplicates in the list make the inverted Index
@@ -198,54 +197,58 @@ public class ParseFile
 	}
 	
 	/**
+	 * iterate through the RAW data from the files and remove duplicate entries.
+	 * append the file/location index to the key.
 	 * 
+	 * PATH and FILE NAME Still hardcoded
 	 * @param fileContents
 	 * @return Map of key Value pairs representing the word location of the text in the files that will be searched
 	 */
 	public static Map<String, String> mergeDuplicates(ArrayList<String> fileContents)
 	{
-		
-		Map<String, String> indexTable = new TreeMap<>();
-		//get rid of duplicates
-		//loop through the fileContents andmake a map
-		for (  int i =0; i < fileContents.size(); i++)
-		{
-			String[] stTemp = new String[2];
-			stTemp = fileContents.get(i).toString().split(":");
-			
-			
-			if (!indexTable.containsKey(stTemp[0]))
-			{
-				indexTable.put(stTemp[0],stTemp[1]);	
-			}
-			else
-			{
-				//get the previous index value and append it
-				//String valueTemp = indexTable.get(indexTable.size()-1);
-				String valueTemp = indexTable.get(stTemp[0]);
-				valueTemp = valueTemp + "," + stTemp[1];
-				indexTable.put(stTemp[0],valueTemp);
-			}
-		}
-	
-		return indexTable;
+
+	    Map<String, String> indexTable = new TreeMap<>();
+	    // get rid of duplicates
+	    // loop through the fileContents andmake a map
+	    for (int i = 0; i < fileContents.size(); i++)
+	    {
+		String[] stTemp = new String[2];
+		stTemp = fileContents.get(i).toString().split(":");
+
+	    if (!indexTable.containsKey(stTemp[0]))
+	    {
+		indexTable.put(stTemp[0], stTemp[1]);
+	    }
+	    else
+	    {
+		// get the previous index value and append it
+		// String valueTemp = indexTable.get(indexTable.size()-1);
+		String valueTemp = indexTable.get(stTemp[0]);
+		valueTemp = valueTemp + "," + stTemp[1];
+		indexTable.put(stTemp[0], valueTemp);
+	    }
 	}
+
+	return indexTable;
+    }
 	
 	/**
 	 * printRawFileContents prints the complete, sorted, contents of the search files word: file@location
 	 *  to a text file.
-	 * 
+	 * PATH and FILE NAME Still hardcoded
 	 * @param fileContents
 	 * @throws IOException
 	 */
 	public static void printRawFileContents(ArrayList<String> fileContents) throws IOException
 	{
-		//print to file the contents of the file(s)	
-		PrintWriter outFile = new PrintWriter(new FileWriter("C:\\Temp1\\Raw_File_Contents.txt"));
+	    //make a directory if none exists
+	    new File("C://IndexTemp").mkdirs();
+	    //print to file the contents of the file(s)	
+	    PrintWriter outFile = new PrintWriter(new FileWriter("C:\\IndexTemp\\Raw_File_Contents.txt"));
 				
-		for(int i = 0; i < fileContents.size();i++)
-			outFile.println(fileContents.get(i));
-		outFile.close();
+	    for(int i = 0; i < fileContents.size();i++)
+		outFile.println(fileContents.get(i));
+	    outFile.close();
 	}
 	
 	/**
@@ -256,13 +259,13 @@ public class ParseFile
 	 */
 	public static void printMapContents(Map<String, String> indexMapTable) throws IOException
 	{
-		
-		PrintWriter outFile = new PrintWriter(new FileWriter("C:\\Temp1\\Index_Map_File.txt"));
-		List<String> indexMapKeys = new ArrayList<>(indexMapTable.keySet());
-		
-		for(String key : indexMapKeys)
-			outFile.println(key + ":" + indexMapTable.get(key));
-		outFile.close();
+	    //make a directory if none exists    
+	    new File("C://IndexTemp").mkdirs();
+	    PrintWriter outFile = new PrintWriter(new FileWriter("C:\\IndexTemp\\Index_Map_File.txt"));
+	    List<String> indexMapKeys = new ArrayList<>(indexMapTable.keySet());
+	    for(String key : indexMapKeys)
+		outFile.println(key + ":" + indexMapTable.get(key));
+	    outFile.close();
 	}
 	
 	/**
@@ -274,18 +277,22 @@ public class ParseFile
 	
 	public static ArrayList<String> retrieveFileList ()
 	{
-		ArrayList<String> fileList = new ArrayList<>();
-		// open a file path, print out the path and file name
-		File path = new File("C:\\Temp\\");
-		// put the file names in a file list
-		File[] files = path.listFiles();
-		
-		for(int i =0; i< files.length; i++)
-		{
-			fileList.add(files[i].toString());
-		}
+	    ArrayList<String> fileList = new ArrayList<>();
+	    // open a file path, print out the path and file name
+	    File path = new File("C:\\Temp\\");
+	    // put the file names in a file list
+	    File[] files = path.listFiles();
 
-		return fileList;
+	    for (int i = 0; i < files.length; i++)
+	    {
+		fileList.add(files[i].toString());
+	    }
+	    return fileList;
+	}
+	
+	public static void removeFile()
+	{
+	 //methode to remove a file from the list of files for searching   
 	}
 	
 }
